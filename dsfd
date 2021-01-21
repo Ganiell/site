@@ -1,0 +1,91 @@
+ <?php 
+
+    if(!isset($_POST['nome'])){
+        $checkphp = "php não inicializou";
+ 
+    } else {
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        $assunto = $_POST['assunto'];
+        $mensagem = $_POST['mensagem'];
+        $checkphp = 'php inicializou';
+
+
+        // if(!isset($_SESSION['bla'])) {
+
+        //     echo "<script>
+        //         msgEnviada()
+        //         setTimeOut(apagaMsg(), 4000)
+        //     </script>";
+            
+        //     session_start();
+        //     $_SESSION['bla'] = 'blabl';
+        // } else {
+        //     session_unset();
+        //     session_destroy();    
+        // }
+        
+          
+
+        echo "<script>
+            document.getElementById('nome').value = ''
+            msgEnviada()
+            window.location = 'index.php#posso-ajudar'
+        </script>";
+
+    }
+
+    ?>
+    
+
+        <script>
+        document.querySelector('form').addEventListener('submit', function () {
+            let nome = document.getElementById('nome')
+            console.log(nome.value)
+            if (nome.value) {
+                <?php
+                     $checkphp = "php inicializou";
+
+                     $nome = $_POST['nome'];
+                     $email = $_POST['email'];
+                     $assunto = $_POST['assunto'];
+                     $mensagem = $_POST['mensagem'];
+                ?>
+               
+            }  else {
+                <?php $checkphp = "php não inicializou" ?>
+            }
+        })
+          
+
+    </script>
+
+
+
+    let msgWindow = document.getElementsByClassName('msgEnviada')[0]
+
+
+function msgEnviada() {
+    msgWindow.style = "display: block"
+}
+
+function apagaMsg () {
+    msgWindow.style = "display: none"
+}
+
+
+
+ echo "<script>
+                window.location = 'index.php#posso-ajudar'
+            </script>";
+
+            echo "<script>
+                let loca = 'http://localhost/site-principal/site/index.php#posso-ajudar'
+                let loca2 = window.location.href
+                if (loca == loca2) {
+                    window.location = 'index.php'
+                } else {
+                    msgEnviada()
+                    setTimeout(apagaMsg,2500)
+                }
+            </script>";

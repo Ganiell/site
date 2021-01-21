@@ -3,6 +3,9 @@
     padding: 0;
     font-family: 'Montserrat', sans-serif;
 }
+body {
+    background: #202020;
+}
 nav {
     position: fixed;
     left: 10px;
@@ -71,6 +74,7 @@ textarea:focus, input:focus, select:focus {
     outline: 0;
     resize: none;
 }  
+
 form div{
     width: 100%;
     margin: 0px auto 0px auto;
@@ -129,19 +133,23 @@ footer {
     padding-top: 240px;
     background-color: #ffee32;
 }
-.sec-1 > article > p {
-    text-align: center;
-    padding: 20px;
-    font-size: 1.5em;
-}
-.sec-1_art-1 {
+
+.sec-1_art-1 > p {
     margin-bottom: 110px;
+    text-align: center;
+    padding: 60px 10% 0px 10%;
+    font-size: 2em;
+    color: #202020;
+    font-weight: bold;
 }
 .sec-1_art-2 > div > p {
+    color: #202020;
     font-size: 1.5em;
     text-align: center;
+    font-weight: bold;
 }
 .sec-1_art-2 > div > span {
+    color: #202020;
     font-size: 6em;
     text-align: center;
 }
@@ -154,8 +162,9 @@ footer {
     color: #ffee32;
 }
 .sec-1_art-2 {
-    padding: 40px 0px 100px 0px ;
+    padding: 0px 0px 100px 0px ;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
 }
 .sec-2_art-1{
@@ -296,6 +305,7 @@ footer {
     font-size: 1em;
     color: gray;
     box-shadow: 0px 1px 5px 3px transparent ;
+    cursor: pointer;
 }
 
 #btn:hover{
@@ -306,8 +316,8 @@ footer {
     transition: ease-in-out 0.25s;
 }
 #btn:focus{
-    transition: none    ;
-    box-shadow: 0px 1px 5px 3px black ;    
+    transition: none;
+    box-shadow: 0px 1px 6px 4px black ;    
 }
 .infos article {
     padding: 30px;
@@ -317,6 +327,24 @@ footer {
     text-align: center;
     padding: 20px;
 }
+.msgEnviada {
+    display: none;
+    background: #202020;
+    position: fixed;
+    width: 25%;
+    height: 25%;
+    bottom: 150px;
+    right: 30px;
+    text-align: center;
+    padding: 2%;
+    border-radius: 20px;
+    color: gray;
+    font-size: 1.5em;
+    border: solid 2.5px #ffee32;
+    box-shadow: 0px  0px 8px 3px #ffee32;
+    transition: ease-in-out 1s;
+}
+
 
 @media only screen and (max-width: 820px) {
     nav {
@@ -337,6 +365,23 @@ footer {
     #nome, #email {
         width: 43%;
     }
+    .sec-1_art-2 > div > p {
+        color: #202020;
+        font-size: 1.2em;
+        text-align: center;
+    }
+    .sec-1_art-2 > div > span {
+        color: #202020;
+        font-size: 4em;
+        text-align: center;
+    }
+    .sec-1_art-2 > div {
+        /* background: blue; */
+        width: 130px;
+        margin: 20px;
+        text-align: center;
+    }
+
     .sec-4_art-1 {
         width: 600px;
     }    
@@ -374,7 +419,9 @@ footer {
     .equipe > div > span {
         font-size: 0.8em;
     } 
-    
+    .msgEnviada {
+        font-size: 1em;
+    }
     
 }
 @media only screen and (max-width: 620px) {
@@ -411,6 +458,14 @@ footer {
     .anel3 {
         width: 100px;
         height: 100px;
+    }
+    .sec-1_art-1 > p {
+        font-size: 1.5em;
+        padding: 60px 11% 0px 11%;
+    }
+    .sec-1_art-1 > h2 {
+        font-size: 2em;
+        padding: 0px 15%;
     }
     .sec-1_art-1 {
         margin: -40px auto 10px auto;
@@ -489,5 +544,10 @@ footer {
         font-size: 1.5em;
     }
 
-
+    .msgEnviada {
+        padding: 5%;
+        height: 15%;
+        border: solid 3px #ffee32;
+        box-shadow: 2px 1px 10px 1px #ffee32;
+    }
 }

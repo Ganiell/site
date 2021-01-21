@@ -1,8 +1,9 @@
 let string = ''
 let form = document.querySelector('form')
 
+
+
 form.addEventListener('submit', function(evento) {
-    evento.preventDefault()
     let item
     for(let i = 0; i < this.elements.length - 1; i++) {
         item = this.elements[i]
@@ -10,9 +11,11 @@ form.addEventListener('submit', function(evento) {
         string = string.trim()
         if(!string) {
             item.classList.add('erro')
+            evento.preventDefault()
         } else {
             item.classList.remove('erro')
             item.classList.remove('erro2')
+            let check = 'checado'
         }
     }
 })
@@ -30,8 +33,10 @@ for(let i of form.elements) {
             } else {
                 i.classList.remove('erro')
                 i.classList.remove('erro2')
+
             }
         })
     }
 }
+
 

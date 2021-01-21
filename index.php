@@ -31,11 +31,11 @@
             <article class="sec-1_art-1">
                 <h2>Muito mais que uma <br> agência digital</h2>
                 <p>
-                    Sou um parágrafo. Clique aqui para editar e adicionar o seu próprio texto.
+                    Criamos histórias, experiências, marketing e comunicação visual. Somos apaixonados pelo o que fazemos e nosso objetivo é oferecer um trabalho extraordinário. Você pode ter o bom, o incrível mas, precisa do UAU
                 </p>
             </article>
             <article class="sec-1_art-2">
-                <!-- <div>
+                <div>
                     <span>85%</span>
                     <p>Clientes e empregados avaliados</p>
                 </div>
@@ -46,7 +46,7 @@
                 <div>
                     <span>16</span>
                     <p>Funcionários talentososna nossa equipe</p>
-                </div> -->
+                </div>
             </article>
         </section>
 
@@ -96,35 +96,8 @@
                     <hr>
                     <div class="img-projetos">
                         <img src="https://images.pexels.com/photos/2401400/pexels-photo-2401400.jpeg?cs=srgb&dl=pexels-ike-louie-natividad-2401400.jpg&fm=jpg" alt="">
-                    </div>                 
-                </div>   
-                <div>
-                    <h3>
-                        TÍTULO DO PROJETO
-                    </h3>
-                    <hr>
-                    <div class="img-projetos">
-                        <img src="https://images.pexels.com/photos/2401400/pexels-photo-2401400.jpeg?cs=srgb&dl=pexels-ike-louie-natividad-2401400.jpg&fm=jpg" alt="">
-                    </div>                 
-                </div>   
-                <div>
-                    <h3>
-                        TÍTULO DO PROJETO
-                    </h3>
-                    <hr>
-                    <div class="img-projetos">
-                        <img src="https://images.pexels.com/photos/2401400/pexels-photo-2401400.jpeg?cs=srgb&dl=pexels-ike-louie-natividad-2401400.jpg&fm=jpg" alt="">
-                    </div>                 
-                </div>   
-                <div>
-                    <h3>
-                        TÍTULO DO PROJETO
-                    </h3>
-                    <hr>
-                    <div class="img-projetos">
-                        <img src="https://images.pexels.com/photos/2401400/pexels-photo-2401400.jpeg?cs=srgb&dl=pexels-ike-louie-natividad-2401400.jpg&fm=jpg" alt="">
-                    </div>                 
-                </div>   
+                    </div>                
+                </div> 
             </article>
         </section>
         <section class="sec-3">
@@ -177,17 +150,17 @@
     </main>
 
     <footer>
-        <form>
-            <h2>
+        <form method="POST" action="index.php">
+            <h2  id="posso-ajudar">
                 POSSO AJUDAR?
             </h2>
             <div>
-                <input type="text"  placeholder="Nome" id="nome">
-                <input type="email"   placeholder="E-mail" id="email">
+                <input type="text" name="nome" placeholder="Nome" id="nome">
+                <input type="email" name="email"  placeholder="E-mail" id="email">
                 <br>
-                <input type="text"  placeholder="Assunto">
+                <input type="text" name="assunto"  placeholder="Assunto">
                 <br>
-                <textarea  rows="5" placeholder="Mensagem"></textarea>
+                <textarea  rows="5" name="mensagem" placeholder="Mensagem"></textarea>
             </div>
             <input id="btn" type="submit"></input>
         </form>
@@ -217,6 +190,65 @@
              &copy; 2021 Por Uau Idea
         </div>
     </footer>
+    <div class="msgEnviada">
+        <p><strong>BLA BLA BLA</strong></p>
+        <p> bla bla bla bla bla bla bla bla bla bla</p>
+    </div>
     <script src="script.js"></script>
+
+    <script>
+
+        let msgWindow = document.getElementsByClassName('msgEnviada')[0]
+
+
+        function msgEnviada() {
+            msgWindow.style = "display: block"
+        }
+
+        function apagaMsg () {
+            msgWindow.style = "display: none"
+        }
+
+       
+    </script>
+
+    <?php 
+
+        if(!isset($_POST['nome']))
+        {
+            $checkphp = "php não inicializou";
+
+        } else {
+            $nome = $_POST['nome'];
+            $email = $_POST['email'];
+            $assunto = $_POST['assunto'];
+            $mensagem = $_POST['mensagem'];
+            $checkphp = 'php inicializou';
+            
+
+           echo "<script>
+                window.location = 'index.php#posso-ajudar'
+                msgEnviada()
+                setTimeout(apagaMsg, 3500)                
+                setTimeout(() => {
+                    window.location = 'index.php'
+                }, 4560)
+           </script>";
+        }
+
+?>
+
+
+    <script>
+    let check = "<?php 
+    if(isset($checkphp)) {
+        echo $checkphp;
+        } else {
+            echo "" ;
+        }
+        ?>"
+    console.log(check ? check : "deu errado")
+    </script> 
+
 </body>
 </html>
