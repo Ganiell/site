@@ -342,7 +342,7 @@ footer {
     font-size: 1.5em;
     border: solid 2.5px #ffee32;
     box-shadow: 0px  0px 8px 3px #ffee32;
-    transition: ease-in-out 1s;
+    transition: all 1s;
 }
 
 

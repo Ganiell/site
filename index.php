@@ -20,9 +20,9 @@
             </div>
         </div>
         <nav>
-            <a href="https://www.facebook.com/uauidea"><img src="https://media.discordapp.net/attachments/774424036636885022/799737659341012992/facebook-solid.png" alt=""></a>
-            <a href="https://www.linkedin.com/in/uau-idea-5660a31bb/"><img src="https://media.discordapp.net/attachments/774424036636885022/799737562670694441/linkedin-2662666-2213265.png" alt=""></a>
-            <a href="https://www.instagram.com/uauidea/"><img src="https://maxcdn.icons8.com/Share/icon/androidL/Logos/instagram_new1600.png" alt=""></a>
+            <a href="https://www.facebook.com/uauidea" target="_blank"><img src="https://media.discordapp.net/attachments/774424036636885022/799737659341012992/facebook-solid.png" alt=""></a>
+            <a href="https://www.linkedin.com/in/uau-idea-5660a31bb/" target="_blank"><img src="https://media.discordapp.net/attachments/774424036636885022/799737562670694441/linkedin-2662666-2213265.png" alt=""></a>
+            <a href="https://www.instagram.com/uauidea/" target="_blank"><img src="https://maxcdn.icons8.com/Share/icon/androidL/Logos/instagram_new1600.png" alt=""></a>
         </nav>
     </header>
     
@@ -197,12 +197,12 @@
     <script src="script.js"></script>
 
     <script>
+        
+        let msgWindow = document.querySelector('.msgEnviada')
 
-        let msgWindow = document.getElementsByClassName('msgEnviada')[0]
-
-
-        function msgEnviada() {
+        function msgEnviada(nome) {
             msgWindow.style = "display: block"
+            msgWindow.getElementsByTagName('strong')[0].innerHTML = nome
         }
 
         function apagaMsg () {
@@ -228,7 +228,7 @@
 
            echo "<script>
                 window.location = 'index.php#posso-ajudar'
-                msgEnviada()
+                msgEnviada('$nome')
                 setTimeout(apagaMsg, 3500)                
                 setTimeout(() => {
                     window.location = 'index.php'
